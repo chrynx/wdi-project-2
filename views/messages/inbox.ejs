@@ -1,0 +1,18 @@
+<main class="container">
+<p><strong>Inbox</strong></p>
+<div class="row">
+<% inbox.forEach(message => { %>
+  <div class="col-2">
+  <img src="<%= message.image %>">
+  </div>
+  <div class="col-10">
+  <p><%= message.subject %></p>
+  <p class="subtitle"><%= message.text %></p>
+  <% () => { %>
+  <p>From: <strong><%= message.userFrom.username %></strong></p>
+  <p>To: <strong><%= message.userTo.username %></strong></p>
+  <% } %>
+  </div>
+<% }) %>
+  </div>
+</main>

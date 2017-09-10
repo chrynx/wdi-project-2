@@ -1,0 +1,128 @@
+body {
+  background: white;
+  color: grey;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  max-width: 100%;
+}
+.nav-link:hover {
+  background: grey;
+}
+
+.labels {
+  display: block;
+}
+label {
+  margin: 10px auto;
+}
+input {
+  width: 100%;
+  margin: 10px auto;
+  border: 2px solid #eee;
+  border-left: none;
+  border-right: none;
+  border-radius: 90px;
+  color: black;
+}
+input::placeholder {
+  color: black;
+  padding: 5px;
+}
+input:focus {
+  outline:none;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+  overflow: visible;
+  &::placeholder {
+    color: white;
+  }
+}
+.navbar-brand {
+  border: 5px solid white;
+  padding: 0 10px;
+}
+.container {
+  margin: 0 auto;
+  border: 2px solid #eee;
+  border-top: none;
+  border-bottom: none;
+  overflow: scroll;
+}
+.row {
+  color: #343a40;
+  border: 2px solid #eee;
+  border-left: none;
+  border-right: none;
+  margin: 5px auto;
+  padding: 5px;
+}
+.subtitle {
+  font-size: 14px;
+}
+.edit {
+  font-size: 10px;
+  background: #ddd;
+  border: 1px solid #bbb;
+  color: black;
+  padding: 3px 5px;
+  float: right;
+  margin: 5px auto;
+}
+.headline {
+  font-size: 30px;
+  font-style: italic;
+}
+.mainTopic {
+  color: #aaa;
+  margin-top: 80px;
+  border: 2px solid black;
+  padding: 5px;
+  background: #ddd;
+  text-transform: uppercase;
+  text-align: center;
+}
+.topLine {
+  margin-top: 50px;
+}
+
+.userNav {
+  float: right;
+}
+
+button {
+  font-size: 10px;
+  background: #ddd;
+  border: 1px solid #bbb;
+  color: black;
+  padding: 3px 5px;
+  margin: 5px auto;
+}
+button:focus {
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  height: 100px;
+}
+// =================================================================
+@media screen and (max-width: 700px) {
+  .headline {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .headline {
+    font-size: 20px;
+  }
+}
