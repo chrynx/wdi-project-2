@@ -7,7 +7,7 @@ function registrationsNew(req, res) {
 function registrationsCreate(req, res) {
   User
     .create(req.body)
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/register'))
     .catch(err => res.render('error', {err}));
 }
 

@@ -12,10 +12,27 @@ p {
 img {
   max-width: 100%;
 }
+.navbar {
+  padding: 0;
+}
+.profileFont {
+  font-size: 20px;
+}
+.profileInfo {
+  text-align: right;
+}
+.welcome {
+  position: fixed;
+  right: 10px;
+  padding: 0 10px;
+  border: 5px solid white;
+}
 .nav-link:hover {
   background: grey;
 }
-
+.or {
+  text-align: center;
+}
 .labels {
   display: block;
 }
@@ -48,6 +65,9 @@ input:focus {
 .navbar-brand {
   border: 5px solid white;
   padding: 0 10px;
+}
+.navbar-toggler {
+  margin: 0;
 }
 .container {
   margin: 0 auto;
@@ -93,9 +113,6 @@ input:focus {
   margin-top: 50px;
 }
 
-.userNav {
-  float: right;
-}
 
 button {
   font-size: 10px;

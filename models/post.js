@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
   subtitle: String,
-  text: { type: String, required: true },
+  text: { type: String, maxlength: 380},
   image: String,
   comments: [commentSchema],
   user: {type: mongoose.Schema.ObjectId, ref: 'User'}

@@ -1,5 +1,35 @@
 <main class="container">
+<h3><strong>Sign Up/In</strong></h3>
+<div class="row">
+
+  <div class="col-5">
+  <p>Would you like to sign up?</p>
+
 <form method="POST" action="/register">
+  <div class="row">
+  <div class="col-3">
+    <label class="label">First Name</label>
+  </div>
+    <div class="control col-9">
+      <input class="input" name="firstname" type="text" placeholder="Please enter your first name here" required>
+    </div>
+</div>
+  <div class="row">
+  <div class="col-3">
+    <label class="label">Last Name</label>
+  </div>
+    <div class="control col-9">
+      <input class="input" name="lastname" type="text" placeholder="Please enter your last name here" required>
+    </div>
+</div>
+  <div class="row">
+  <div class="col-3">
+    <label class="label">Profile Picture</label>
+  </div>
+    <div class="control col-9">
+      <input class="input" name="image" type="text" placeholder="Please enter the URL for your profile picture here" required>
+    </div>
+</div>
   <div class="row">
   <div class="col-3">
     <label class="label">Username</label>
@@ -36,4 +66,44 @@
     <button class="button is-primary">Register</button>
   </div>
 </form>
+</div>
+
+<div class="col-2 or">
+  <p>OR</p>
+</div>
+
+<div class="col-5">
+  <p>Would you like to sign in?</p>
+  
+<form method="POST" action="/login">
+  <div class="row">
+  <div class="col-3">
+    <label class="label">Email</label>
+  </div>
+    <div class="control col-9">
+      <input class="input" name="email" type="text" placeholder="Please enter your email here" required>
+    </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <label class="label">Password</label>
+  </div>
+    <div class="control col-9">
+      <input class="input" name="password" type="password" placeholder="Please enter your password here" required>
+    </div>
+</div>
+  <div class="control">
+    <button class="button is-primary">Login</button>
+  </div>
+</form>
+</div>
+
+</div>
+
+
+
+
+
+
+
 </main>

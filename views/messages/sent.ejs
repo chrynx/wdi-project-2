@@ -3,15 +3,13 @@
 <% messages.forEach(message => { %>
   <% if(isAuthenticated) { %>
   <div class="row">
-
   <div class="col-2">
   <img src="<%= message.image %>">
   </div>
-
   <div class="col-10">
   <p><%= message.subject %></p>
   <p class="subtitle"><%= message.text %></p>
-  <p>From: <strong><%= message.sender.username %></strong></p>
+  <p>To: <strong><%= message.receiver.username %></strong></p>
   </div>
   <form method="POST" action="/messages/<%= message.id %>">
     <input type="hidden" name="_method" value="DELETE">

@@ -1,20 +1,16 @@
 const User = require('../models/user');
 
-function sessionsNew(req, res) {
-  res.render('sessions/new');
-}
-
 function sessionsCreate(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
       if(!user || !user.validatePassword(req.body.password)) {
         req.flash('danger', 'Invalid Credentials');
-        return res.redirect('/login');
+        res.redirect('/register');
       }
       // user is authenticated
       req.session.userId = user.id;
-      res.redirect('/');
+      res.redirect('/posts');
     });
 }
 
@@ -23,7 +19,6 @@ function sessionsDelete(req, res) {
 }
 
 module.exports = {
-  new: sessionsNew,
   create: sessionsCreate,
   delete: sessionsDelete
 };

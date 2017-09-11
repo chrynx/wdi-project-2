@@ -9,14 +9,22 @@
     <a class="nav-link button1" href="/posts">Posts <span class="sr-only">(current)</span></a>
   </li>
   <% if(!locals.isAuthenticated) { %>
-<li><a class="nav-link button2" href="/register">Register</a></li>
-<li><a class="nav-link button2" href="/login">Login</a></li>
-<% } else { %>
-  <li><a class="nav-link button2" href="/messages/inbox">Inbox</a></li>
-  <li><a class="nav-link button2" href="/posts/profile">Profile</a></li>
-  <li><a class="nav-link button2" href="/posts/new">New Cheese</a></li>
-<li><a class="nav-link button2" href="/logout">Logout</a></li>
+    <li class="navRight"><a class="nav-link button2" href="/register">Sign Up/In</a></li>
+    <% } else { %>
+      <li class="navRight"><a class="nav-link button2" href="/posts/new">New Post</a></li>
+      <li class="navRight"><a class="nav-link button2" href="/messages/inbox">Inbox</a></li>
+      <li class="navRight"><a class="nav-link button2" href="/messages/sent">Sent</a></li>
+      <li class="navRight"><a class="nav-link button2" href="/messages/new">New Message</a></li>
+      <li class="navRight"><a class="nav-link button2" href="/users/<%= currentUser.id%>">Profile</a></li>
+      <li class="navRight"><a class="nav-link button2" href="/users/<%= currentUser.id%>/edit">Profile Edit</a></li>
+      <li class="navRight"><a class="nav-link button2" href="/logout">Logout</a></li>
+
 <% } %>
 </ul>
+<% if(locals.isAuthenticated) { %>
+  <div class="welcome">
+  <p> Welcome back, <%= locals.currentUser.username%></p>
+  </div>
+<% } %>
 </div>
 </nav>

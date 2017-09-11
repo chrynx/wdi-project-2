@@ -1,0 +1,42 @@
+<main class="container">
+  <h3><strong>Profile Page</strong></h3>
+  <div class="row">
+    <div class="col-3">
+      <img src="<%= user.image %>">
+    </div>
+    <div class="col-9 profileFont">
+      <div class="row">
+        <div class="col-6">
+          <p>First Name: </p>
+        </div>
+        <div class="col-6 profileInfo">
+          <p><%= user.firstname %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p>Last Name: </p>
+        </div>
+        <div class="col-6 profileInfo">
+          <p><%= user.lastname %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p>Email: </p>
+        </div>
+        <div class="col-6 profileInfo">
+          <p><%= user.email %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p>Username: </p>
+        </div>
+        <div class="col-6 profileInfo">
+          <p><%= user.username %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>

@@ -1,12 +1,14 @@
 const Post = require('../models/post');
-const Inbox = require('../models/inbox');
 
 function postsIndex(req, res) {
   Post
     .find()
     .populate('user')
     .exec()
-    .then(posts => res.render('posts/index', {posts}))
+    .then(posts => {
+      posts.reverse();
+      res.render('posts/index', {posts});
+    })
     .catch(err => res.render('error', {err}));
 }
 
@@ -96,14 +98,11 @@ function postsCommentsDelete(req, res) {
     .catch(err => res.render('error', {err}));
 }
 // ===========================================================================
-function messagesInbox(req, res) {
-  Inbox
-    .find()
-    .populate('userFrom', 'userTo')
-    .exec()
-    .then(inbox => res.render('messages/inbox', {inbox}))
-    .catch(err => res.render('error', {err}));
-}
+
+
+// =======================================================================
+
+
 module.exports = {
   index: postsIndex,
   show: postsShow,
@@ -114,7 +113,5 @@ module.exports = {
   delete: postsDelete,
   // ========================
   commentsCreate: postsCommentsCreate,
-  commentsDelete: postsCommentsDelete,
-  // =========================
-  messagesInbox: messagesInbox
+  commentsDelete: postsCommentsDelete
 };

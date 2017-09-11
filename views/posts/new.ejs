@@ -1,27 +1,36 @@
 <main class="container">
+<h3><strong>New Post Page</strong></h3>
 <form method="POST" action="/posts">
   <div class="row">
-  <div>
+  <div class="col-3">
     <label class="labels">Title</label>
-    <input type="text" name="title" placeholder="please enter the title here...">
+  </div>
+    <div class="control col-9">
+    <input type="text" name="title" placeholder="please enter the title here..." required>
   </div>
 </div>
   <div class="row">
-  <div>
+  <div class="col-3">
     <label class="labels">Subtitle</label>
+  </div>
+    <div class="control col-9">
     <input type="text" name="subtitle" placeholder="please enter the subtitle here...">
   </div>
 </div>
   <div class="row">
-  <div>
+  <div class="col-3">
     <label class="labels">Text</label>
+  </div>
+    <div class="control col-9">
     <input type="text" name="text" placeholder="please enter your text here...">
   </div>
 </div>
   <div class="row">
-  <div>
+  <div class="col-3">
     <label class="labels">Image</label>
-    <input type="text" name="image" placeholder="If you want to add an image, please entere the URL here...">
+  </div>
+    <div class="control col-9">
+    <input type="text" name="image" placeholder="If you want to add an image, please enter the URL here...">
   </div>
 </div>
   <div class="row">
