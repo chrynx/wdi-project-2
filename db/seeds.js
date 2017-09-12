@@ -3,7 +3,7 @@ mongoose.Promise = require('bluebird');
 const Post = require('../models/post');
 const Inbox = require('../models/message');
 
-const dbURI = 'mongodb://localhost/reddit-clone';
+const dbURI = require('../config/environment');
 mongoose.connect(dbURI, {useMongoClient: true});
 
 Post.collection.drop();
