@@ -10,12 +10,17 @@ function sessionsCreate(req, res) {
       }
       // user is authenticated
       req.session.userId = user.id;
+      req.flash('success', `Welcome back ${user.username}`);
       res.redirect('/posts');
     });
 }
 
 function sessionsDelete(req, res) {
-  req.session.regenerate(() => res.redirect('/'));
+  req.session.regenerate(() => {
+    req.flash('danger', 'You have been logged out');
+    res.redirect('/');
+
+  });
 }
 
 module.exports = {

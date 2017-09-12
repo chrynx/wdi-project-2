@@ -47,12 +47,12 @@ User.create([{
         user: users[0]
       }])
       .then((posts) => {
-        console.log(`${posts.length} trainers created!`);
+        console.log(`${posts.length} posts created!`);
         return  Inbox
           .create([{
             subject: 'This is a sample subject',
             text: 'I included this image in the message ',
-            image: 'http://www.placeacage.com/200/200',
+            image: 'http://www.placecage.com/200/200',
             sender: users[0],
             receiver: users[1]
           }]);

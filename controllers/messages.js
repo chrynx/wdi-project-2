@@ -6,7 +6,7 @@ function messagesInbox(req, res) {
     .find({ receiver: req.currentUser })
     .populate('sender receiver')
     .exec()
-    .then(messages => res.render('messages/inbox', {messages}))
+    .then(receivedMessages => res.render('messages/inbox', {receivedMessages}))
     .catch(err => res.render('error', {err}));
 }
 
@@ -15,7 +15,7 @@ function messagesSent(req, res) {
     .find({ sender: req.currentUser })
     .populate('sender receiver')
     .exec()
-    .then(messages => res.render('messages/sent', {messages}))
+    .then(sentMessages => res.render('messages/sent', {sentMessages}))
     .catch(err => res.render('error', {err}));
 }
 

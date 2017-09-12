@@ -1,6 +1,6 @@
 <main class="container">
-<h3><strong>Inbox</strong></h3>
-<% messages.forEach(message => { %>
+<h3><strong>Sent</strong></h3>
+<% sentMessages.forEach(message => { %>
   <% if(isAuthenticated) { %>
   <div class="row">
   <div class="col-2">
@@ -13,7 +13,7 @@
   </div>
   <form method="POST" action="/messages/<%= message.id %>">
     <input type="hidden" name="_method" value="DELETE">
-    <button class="button is-danger">Delete</button>
+    <button class="button">Delete</button>
   </form>
   </div>
   <% } %>

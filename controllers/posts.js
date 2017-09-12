@@ -17,7 +17,10 @@ function postsShow (req, res) {
     .findById(req.params.id)
     .populate('user')
     .exec()
-    .then(post => res.render('posts/show', {post}))
+    .then(post => {
+      post.comments.reverse();
+      res.render('posts/show', {post});
+    })
     .catch(err => res.render('error', { err }));
 }
 

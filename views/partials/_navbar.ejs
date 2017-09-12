@@ -5,26 +5,36 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
+  <li class="separator"></li>
   <li class="nav-item active">
     <a class="nav-link button1" href="/posts">Posts <span class="sr-only">(current)</span></a>
   </li>
   <% if(!locals.isAuthenticated) { %>
-    <li class="navRight"><a class="nav-link button2" href="/register">Sign Up/In</a></li>
+    <li class="separator"></li>
+    <li class="navRight active"><a class="nav-link button2" href="/register">Sign Up/In</a></li>
+    <li class="separator"></li>
     <% } else { %>
-      <li class="navRight"><a class="nav-link button2" href="/posts/new">New Post</a></li>
-      <li class="navRight"><a class="nav-link button2" href="/messages/inbox">Inbox</a></li>
-      <li class="navRight"><a class="nav-link button2" href="/messages/sent">Sent</a></li>
-      <li class="navRight"><a class="nav-link button2" href="/messages/new">New Message</a></li>
-      <li class="navRight"><a class="nav-link button2" href="/users/<%= currentUser.id%>">Profile</a></li>
-      <li class="navRight"><a class="nav-link button2" href="/users/<%= currentUser.id%>/edit">Profile Edit</a></li>
-      <li class="navRight"><a class="nav-link button2" href="/logout">Logout</a></li>
-
+      <li><a class="nav-link active" href="/posts/new">New Post</a></li>
+      <li><a class="nav-link active" href="/messages/inbox">Inbox</a></li>
+      <li><a class="nav-link active" href="/messages/sent">Sent</a></li>
+      <li><a class="nav-link active" href="/messages/new">New Message</a></li>
+      <li><a class="nav-link active" href="/users/<%= currentUser.id%>">Profile</a></li>
+      <li><a class="nav-link active" href="/users/<%= currentUser.id%>/edit">Profile Edit</a></li>
+      <li class="separator"></li>
+      <div class="logOutDiv">
+      <li class="active"><a class="nav-link button2" href="/logout">Logout</a></li>
+      </div>
+      <li class="separator"></li>
 <% } %>
 </ul>
 <% if(locals.isAuthenticated) { %>
+
   <div class="welcome">
-  <p> Welcome back, <%= locals.currentUser.username%></p>
+    <div class="welcomeSeparator"></div>
+  <p> Welcome back, <strong style="font-size: 25px;"><%= locals.currentUser.username%> </strong> </p>
+    <div class="welcomeSeparator"></div>
   </div>
+
 <% } %>
 </div>
 </nav>

@@ -1,21 +1,19 @@
 <main class="container">
 <h3><strong>Inbox</strong></h3>
-<% messages.forEach(message => { %>
+<% receivedMessages.forEach(message => { %>
   <% if(isAuthenticated) { %>
   <div class="row">
-
-  <div class="col-2">
-  <img src="<%= message.image %>">
-  </div>
-
-  <div class="col-10">
-  <p><%= message.subject %></p>
-  <p class="subtitle"><%= message.text %></p>
-  <p>From: <strong><%= message.sender.username %></strong></p>
-  </div>
+    <div class="col-2">
+      <img src="<%= message.image %>">
+    </div>
+    <div class="col-10">
+      <p><%= message.subject %></p>
+      <p class="subtitle"><%= message.text %></p>
+      <p>From: <strong><%= message.sender.username %></strong></p>
+    </div>
   <form method="POST" action="/messages/<%= message.id %>">
     <input type="hidden" name="_method" value="DELETE">
-    <button class="button is-danger">Delete</button>
+    <button class="button">Delete</button>
   </form>
   </div>
   <% } %>
