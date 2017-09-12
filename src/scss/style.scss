@@ -101,13 +101,13 @@ input:focus {
   font-style: italic;
 }
 .mainTopic {
-  color: #aaa;
-  margin-top: 80px;
-  border: 2px solid black;
+  color: white;
   padding: 5px;
-  background: #ddd;
   text-transform: uppercase;
   text-align: center;
+}
+.jumbotron {
+  background-color: #343a40;
 }
 .topLine {
   margin-top: 50px;
@@ -131,7 +131,23 @@ textarea {
   resize: none;
   height: 100px;
 }
-// =================================================================
+.rating {
+  border: 2px solid black;
+  padding: 5px;
+  // I need to know if I can set the background color as the class name
+}
+
+
+// ===========================================================
+// COMMENT COLORS HERE!
+.ridiculous {background-color: red;}
+.bad {background-color: orange;}
+.meh {background-color: yellow;}
+.decent {background-color: olive;}
+.spectacular {background-color: green;}
+// ===========================================================
+
+// ================MEDIA QUERY================================
 @media screen and (max-width: 700px) {
   .headline {
     font-size: 25px;
