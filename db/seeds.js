@@ -4,9 +4,7 @@ const Post = require('../models/post');
 const Inbox = require('../models/message');
 
 
-const dbURI = require('../config/environment');
-console.log('Connecting to: ', dbURI);
-
+const { dbURI } = require('../config/environment');
 mongoose.connect(dbURI, {useMongoClient: true});
 
 Post.collection.drop();
