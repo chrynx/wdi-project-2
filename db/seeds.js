@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const Post = require('../models/post');
-const Inbox = require('../models/inbox');
+const Inbox = require('../models/message');
 
 const dbURI = 'mongodb://localhost/reddit-clone';
 mongoose.connect(dbURI, {useMongoClient: true});
