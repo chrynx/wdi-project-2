@@ -40,7 +40,8 @@ function messagesCreate (req, res) {
   Message
     .create(req.body)
     .then(() => {
-      res.redirect('/messages/inbox');
+      req.flash('success', 'Message sent');
+      res.redirect('/messages/sent');
     })
     .catch(err => res.render('error', {err}));
 }
@@ -52,7 +53,10 @@ function messagesDelete (req, res) {
     .then(message => {
       return message.remove();
     })
-    .then( () => res.redirect('/messages/inbox'))
+    .then( () => {
+      req.flash('success', 'Message deleted');
+      res.redirect('/messages/inbox');
+    })
     .catch((err) => res.render('error', {err}));
 }
 

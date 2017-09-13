@@ -7,6 +7,8 @@ const sessions = require('../controllers/sessions');
 const users = require('../controllers/users');
 const messages = require('../controllers/messages');
 
+
+
 router.get('/', (req, res) => res.render('home', { isHomepage: true }));
 router.route('/posts')
   .get(posts.index)
@@ -39,6 +41,10 @@ router.route('/users/:id')
   .put(secureRoute, users.update);
 router.route('/users/:id/edit')
   .get(secureRoute, users.edit);
+router.route('/users/:id/password')
+  .get(secureRoute, users.editPassword);
+router.route('/users/:id/update')
+  .put(secureRoute, users.updatePassword);
 // ====================================================================
 router.route('/register')
   .get(registrations.new)
@@ -48,5 +54,16 @@ router.route('/login')
   .post(sessions.create);
 
 router.get('/logout', sessions.delete);
+
+
+
+// ======================================================================
+// EMAIL VALIDATION
+// ======================================================================
+router.get('/checkemail', users.checkEmail);
+router.get('/checkusername', users.checkUsername);
+// =======================================================================
+// =======================================================================
+
 
 module.exports = router;

@@ -7,10 +7,12 @@ function registrationsNew(req, res) {
 function registrationsCreate(req, res) {
   User
     .create(req.body)
-    .then(() => res.redirect('/register'))
+    .then(() => {
+      res.render('/register');
+      req.flash('success', 'You have been registered');
+    })
     .catch(err => res.render('error', {err}));
 }
-
 module.exports = {
   create: registrationsCreate,
   new: registrationsNew

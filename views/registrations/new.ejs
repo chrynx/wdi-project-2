@@ -1,99 +1,101 @@
 <main class="container">
-<h3><strong>Sign Up/In</strong></h3>
-<div class="row registrationForms">
+  <h3><strong>Sign Up/In</strong></h3>
+  <div class="row registrationForms">
 
-  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12">
-  <p>Would you like to sign up?</p>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12">
+      <p>Would you like to sign up?</p>
+      <%# --------------------------------------------------------------%>
+      <%# CHANGE FORM ID TO MATCH VALIDATION%>
+      <form id="register" method="POST" action="/register">
+        <%# ----------------------------------------------------------------%>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">First Name</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" minlength="2" name="firstname" type="text" placeholder="Please enter your first name here" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Last Name</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" minlength="2" name="lastname" type="text" placeholder="Please enter your last name here" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Profile Picture</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="image" type="text" placeholder="Please enter the URL for your profile picture here" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Username</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="username" type="text" placeholder="Please enter your desired username here" required >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Email</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="email" type="text" placeholder="Please enter your email here" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Password</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="password" type="password" placeholder="Please enter your desired password here" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Confirm Password</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="passwordConfirmation" type="password" placeholder="Please enter your password again" required>
+          </div>
+        </div>
+        <div class="control">
+          <button class="button is-primary">Register</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12">
+      <p>Would you like to sign in?</p>
 
-<form id="newRegistrationForm" method="POST" action="/register">
-  <div class="row">
-  <div class="col-3">
-    <label class="label">First Name</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" minlength="2" name="firstname" type="text" placeholder="Please enter your first name here" >
+      <form id="newLoginForm" method="POST" action="/login">
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Email</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="email" type="text" placeholder="Please enter your email here" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label class="label">Password</label>
+          </div>
+          <div class="control col-9">
+            <input class="input" name="password" type="password" placeholder="Please enter your password here" required>
+          </div>
+        </div>
+        <div class="control">
+          <button class="button is-primary">Login</button>
+        </div>
+      </form>
     </div>
-</div>
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Last Name</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" minlength="2" name="lastname" type="text" placeholder="Please enter your last name here" >
-    </div>
-</div>
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Profile Picture</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" name="image" type="text" placeholder="Please enter the URL for your profile picture here" >
-    </div>
-</div>
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Username</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" name="username" type="text" placeholder="Please enter your desired username here" required >
-    </div>
-  </div>
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Email</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" name="email" type="text" placeholder="Please enter your email here" required>
-    </div>
-  </div>
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Password</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" name="password" type="password" placeholder="Please enter your desired password here" required>
-    </div>
-  </div>
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Confirm Password</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" name="passwordConfirmation" type="password" placeholder="Please enter your password again" required>
-    </div>
-  </div>
-  <div class="control">
-    <button class="button is-primary">Register</button>
-  </div>
-</form>
-</div>
-<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 col-12">
-  <p>Would you like to sign in?</p>
 
-<form id="newLoginForm" method="POST" action="/login">
-  <div class="row">
-  <div class="col-3">
-    <label class="label">Email</label>
   </div>
-    <div class="control col-9">
-      <input class="input" name="email" type="text" placeholder="Please enter your email here" required>
-    </div>
-</div>
-<div class="row">
-  <div class="col-3">
-    <label class="label">Password</label>
-  </div>
-    <div class="control col-9">
-      <input class="input" name="password" type="password" placeholder="Please enter your password here" required>
-    </div>
-</div>
-  <div class="control">
-    <button class="button is-primary">Login</button>
-  </div>
-</form>
-</div>
-
-</div>
 
 
 

@@ -20,6 +20,7 @@
       <li><a class="nav-link active" href="/messages/new">New Message</a></li>
       <li><a class="nav-link active" href="/users/<%= currentUser.id%>">Profile</a></li>
       <li><a class="nav-link active" href="/users/<%= currentUser.id%>/edit">Profile Edit</a></li>
+      <li><a class="nav-link active" href="/users/<%= currentUser.id%>/password">Password Change</a></li>
       <li class="separator"></li>
       <div class="logOutDiv">
       <li class="active"><a class="nav-link button2" href="/logout">Logout</a></li>
@@ -30,9 +31,7 @@
 <% if(locals.isAuthenticated) { %>
 
   <div class="welcome">
-    <div class="welcomeSeparator"></div>
   <p> Welcome back, <strong style="font-size: 25px;"><%= locals.currentUser.username%> </strong> </p>
-    <div class="welcomeSeparator"></div>
   </div>
 
 <% } %>
