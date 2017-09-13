@@ -9,7 +9,7 @@ function registrationsCreate(req, res) {
     .create(req.body)
     .then(() => {
       req.flash('success', 'You have been registered');
-      res.render('posts/index');
+      res.render('registrations/new');
     })
     .catch(err => res.render('error', {err}));
 }
