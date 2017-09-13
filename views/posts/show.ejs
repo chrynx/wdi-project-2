@@ -6,85 +6,85 @@
   </div>
   <div class="row">
     <div class="col-6">
-    <% if(post.user) { %>
-      <p>Added by: <strong><%= post.user.username %></strong></p>
+      <% if(post.user) { %>
+        <p>Added by: <strong><%= post.user.username %></strong></p>
+        <% } %>
+      </div>
+    </div>
+    <% if(post.subtitile) { %>
+      <div class="row">
+      <p><%= post.subtitle %></p>
+      </div>
       <% } %>
-    </div>
-  </div>
-  <% if(post.subtitile) { %>
-    <div class="row">
-    <p><%= post.subtitle %></p>
-    </div>
-    <% } %>
-    <div class="row">
-      <p><%= post.text %></p>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <img src='<%= post.image %>'>
+      <div class="row">
+        <p><%= post.text %></p>
       </div>
-    </div>
-    <%# =============================================================%>
-
-    <form id="newCommentForm" method="POST" action="/posts/<%= post.id %>/comments">
       <div class="row">
         <div class="col-6">
-          <label>Comment</label>
-          <textarea name="text" maxlength="100" required></textarea>
+          <img src='<%= post.image %>'>
         </div>
       </div>
+      <%# =============================================================%>
 
-      <div class="row">
-        <div class="col-6">
-          <div>
-            <select name="rating">
-              <option value="ridiculous" name="rating"id="ridiculous">ridiculous</option>
-              <option value="spectacular" name="rating"id="spectacular">spectacular</option>
-            </select>
+      <form id="newCommentForm" method="POST" action="/posts/<%= post.id %>/comments">
+        <div class="row">
+          <div class="col-6">
+            <label>Comment</label>
+            <textarea name="text" maxlength="100" required></textarea>
           </div>
-          <input type="text" value="<%= locals.currentUser.username %>" name="user" disabled>
-          <button class="addButton">Add</button>
         </div>
-      </div>
-    </form>
 
+        <div class="row">
+          <div class="col-6">
+            <div>
+              <select name="rating">
+                <option value="ridiculous" name="rating"id="ridiculous">ridiculous</option>
+                <option value="spectacular" name="rating"id="spectacular">spectacular</option>
+              </select>
+            </div>
+            <input type="text" value="<%= locals.currentUser.username %>" name="user" readonly>
+            <button class="addButton">Add</button>
+          </div>
+        </div>
+      </form>
 
-    <div class="row">
-      <div class="col-12">
-      <ul>
-        <% post.comments.forEach(comment => { %>
-          <li>
-          <p class="rating <%= comment.rating %>">
-            <%= comment.text %>
-          </p>
-          <p>
-          Added by: <strong><%= comment.user %></strong>
-          </p>
-          <% if(comment.user === locals.currentUser.username) { %>
-            <form method="POST" action="/posts/<%= post.id %>/comments/<%= comment.id %>">
-            <input type="hidden" name="_method" value="DELETE" required>
-            <button>Delete</button>
-            </form>
-            <% } %>
-            </li>
-            <% }) %>
-          </ul>
-        </div>
-        </div>
-      <%# =======================================================================%>
 
       <div class="row">
-        <br>
-        <% if(locals.isAuthenticated && post.user && post.user.id === locals.currentUser.id) { %>
-          <form method="POST" action="/posts/<%= post.id %>">
-          <input type="hidden" name="_method" value="DELETE">
-          <a class="button edit" href="/posts/<%= post.id %>/edit"> Edit Post </a>
-          <button class="button"> Delete Post </button>
-          </form>
-          <% } %>
-        </div>
+        <div class="col-12">
+          <ul>
+            <% post.comments.forEach(comment => { %>
+              <li>
+              <p class="rating <%= comment.rating %>">
+              <%= comment.text %>
+              </p>
+              <p>
+              Added by: <strong><%= comment.user %></strong>
+              </p>
+              <% if(comment.user === locals.currentUser.username) { %>
+                <form method="POST" action="/posts/<%= post.id %>/comments/<%= comment.id %>">
+                <input type="hidden" name="_method" value="DELETE" required>
+                <button>Delete</button>
+                </form>
+                <% } %>
+                </li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+          <%# =======================================================================%>
+
+          <div class="row">
+            <br>
+            <% if(locals.isAuthenticated && post.user && post.user.id === locals.currentUser.id) { %>
+              <form method="POST" action="/posts/<%= post.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <a class="button edit" href="/posts/<%= post.id %>/edit"> Edit Post </a>
+              <button class="button"> Delete Post </button>
+              </form>
+              <% } %>
+            </div>
 
 
 
 
-      </main>
+          </main>
