@@ -8,8 +8,8 @@ function registrationsCreate(req, res) {
   User
     .create(req.body)
     .then(() => {
-      res.render('/register');
       req.flash('success', 'You have been registered');
+      res.render('/register');
     })
     .catch(err => res.render('error', {err}));
 }
