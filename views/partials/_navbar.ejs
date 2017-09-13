@@ -1,39 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand" href="/">R</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav">
-  <li class="separator"></li>
-  <li class="nav-item active">
-    <a class="nav-link button1" href="/posts">Posts <span class="sr-only">(current)</span></a>
-  </li>
-  <% if(!locals.isAuthenticated) { %>
-    <li class="separator"></li>
-    <li class="navRight active"><a class="nav-link button2" href="/register">Sign Up/In</a></li>
-    <li class="separator"></li>
-    <% } else { %>
-      <li><a class="nav-link active" href="/posts/new">New Post</a></li>
-      <li><a class="nav-link active" href="/messages/inbox">Inbox</a></li>
-      <li><a class="nav-link active" href="/messages/sent">Sent</a></li>
-      <li><a class="nav-link active" href="/messages/new">New Message</a></li>
-      <li><a class="nav-link active" href="/users/<%= currentUser.id%>">Profile</a></li>
-      <li><a class="nav-link active" href="/users/<%= currentUser.id%>/edit">Profile Edit</a></li>
-      <li><a class="nav-link active" href="/users/<%= currentUser.id%>/password">Password Change</a></li>
+  <a class="navbar-brand" href="/">R</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
       <li class="separator"></li>
-      <div class="logOutDiv">
-      <li class="active"><a class="nav-link button2" href="/logout">Logout</a></li>
-      </div>
-      <li class="separator"></li>
-<% } %>
-</ul>
-<% if(locals.isAuthenticated) { %>
+      <li class="nav-item active">
+        <a class="nav-link button1" href="/posts">Posts <span class="sr-only">(current)</span></a>
+      </li>
+      <% if(!locals.isAuthenticated) { %>
+        <li class="separator"></li>
+        <li class="navRight active"><a class="nav-link button2" href="/register">Sign Up/In</a></li>
+        <li class="separator"></li>
+        <% } else { %>
+          <li><a class="nav-link active" href="/posts/new">New Post</a></li>
+          <li><a class="nav-link active" href="/messages/inbox">Inbox</a></li>
+          <li><a class="nav-link active" href="/messages/sent">Sent</a></li>
+          <li><a class="nav-link active" href="/messages/new">New Message</a></li>
+          <li><a class="nav-link active" href="/users/<%= currentUser.id%>">Profile</a></li>
+          <li><a class="nav-link active" href="/users/<%= currentUser.id%>/edit">Profile Edit</a></li>
+          <li><a class="nav-link active" href="/users/<%= currentUser.id%>/password">Password Change</a></li>
+          <li class="separator"></li>
+          <div class="logOutDiv">
+          <li class="active"><a class="nav-link button2" href="/logout">Logout</a></li>
+          </div>
+          <li class="separator"></li>
+          <% } %>
+        </ul>
+        <% if(locals.isAuthenticated) { %>
 
-  <div class="welcome">
-  <p> Welcome back, <strong style="font-size: 25px;"><%= locals.currentUser.username%> </strong> </p>
-  </div>
+          <div class="welcome">
+          <p> Welcome back, <strong style="font-size: 25px;"><%= locals.currentUser.username%> </strong> </p>
+          </div>
 
-<% } %>
-</div>
-</nav>
+          <% } %>
+        </div>
+      </nav>

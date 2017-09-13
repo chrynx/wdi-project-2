@@ -27,7 +27,10 @@ function usersUpdate (req, res) {
       user = Object.assign(user, req.body);
       return user.save();
     })
-    .then(user => res.redirect(`${user.id}`))
+    .then(user => {
+      req.flash('success', 'Profile edited');
+      res.redirect(`${user.id}`);
+    })
     .catch(err => res.render('error', { err }));
 }
 

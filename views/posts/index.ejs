@@ -1,17 +1,17 @@
 <main class="container">
-<h3><strong>Post Index Page</strong></h3>
-<% posts.forEach(post => { %>
-  <div class="row">
-  <div class="col-2">
-  <img src="<%= post.image %>">
-  </div>
-  <div class="col-10">
-  <p><a href="/posts/<%= post.id %>"><%= post.title %></a></p>
-  <p class="subtitle"><%= post.subtitle %></p>
-  <% if(post.user) { %>
-  <p>Added by: <strong><%= post.user.username %></strong></p>
-  <% } %>
-  </div>
-  </div>
-<% }) %>
-</main>
+  <h3><strong>Post Index Page</strong></h3>
+  <% posts.forEach(post => { %>
+    <div class="row">
+    <div class="col-2">
+    <img src="<%= post.image %>">
+    </div>
+    <div class="col-10">
+    <p><a href="/posts/<%= post.id %>"><%= post.title %></a></p>
+    <p class="subtitle"><%= post.subtitle %></p>
+    <% if(post.user) { %>
+      <p>Added by: <strong><%= post.user.username %></strong></p>
+      <% } %>
+      </div>
+      </div>
+      <% }) %>
+    </main>

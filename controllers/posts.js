@@ -34,7 +34,10 @@ function postsCreate (req, res) {
 
   Post
     .create(req.body)
-    .then(() => res.redirect('/posts'))
+    .then(() => {
+      req.flash('success', 'Post Created');
+      res.redirect('/posts');
+    })
     .catch(err => res.render('error', {err}));
 }
 
@@ -54,7 +57,10 @@ function postsUpdate (req, res) {
       post = Object.assign(post, req.body);
       return post.save();
     })
-    .then(post => res.redirect(`/posts/${post.id}`))
+    .then(post => {
+      req.flash('success', 'Post Updated');
+      res.redirect(`/posts/${post.id}`);
+    })
     .catch(err => res.render('error', {err}));
 }
 
@@ -65,7 +71,10 @@ function postsDelete (req, res) {
     .then(post => {
       return post.remove();
     })
-    .then( () => res.redirect('/posts'))
+    .then( () => {
+      req.flash('success', 'Post Deleted');
+      res.redirect('/posts');
+    })
     .catch((err) => res.render('error', {err}));
 }
 // =============================================================================

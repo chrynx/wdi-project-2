@@ -1,21 +1,21 @@
 <main class="container">
-<h3><strong>Sent</strong></h3>
-<% sentMessages.forEach(message => { %>
-  <% if(isAuthenticated) { %>
-  <div class="row">
-  <div class="col-2">
-  <img src="<%= message.image %>">
-  </div>
-  <div class="col-10">
-  <p><%= message.subject %></p>
-  <p class="subtitle"><%= message.text %></p>
-  <p>To: <strong><%= message.receiver.username %></strong></p>
-  </div>
-  <form method="POST" action="/messages/<%= message.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button class="button">Delete</button>
-  </form>
-  </div>
-  <% } %>
-  <% }) %>
-</main>
+  <h3><strong>Sent</strong></h3>
+  <% sentMessages.forEach(message => { %>
+    <% if(isAuthenticated) { %>
+      <div class="row">
+      <div class="col-2">
+      <img src="<%= message.image %>">
+      </div>
+      <div class="col-10">
+      <p><%= message.subject %></p>
+      <p class="subtitle"><%= message.text %></p>
+      <p>To: <strong><%= message.receiver.username %></strong></p>
+      </div>
+      <form method="POST" action="/messages/<%= message.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="button">Delete</button>
+      </form>
+      </div>
+      <% } %>
+      <% }) %>
+    </main>
